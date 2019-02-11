@@ -26,6 +26,7 @@ public class MainTamagotchi {
 		//Tant que tamagotchi est en vie//
 		while (tama.isVie() != false) {
 			System.out.println(tama.checkStatus());
+			tama.choix();
 			essai ++;
 			tama.setAge(essai);
 			

@@ -21,9 +21,34 @@ public class Tamagotchi {
 	private boolean vie = true;
 	public String status;
 	
+	
 	////END/////
 
-
+	public String choix() {
+		char user;
+		String activity;
+		System.out.println("Quel activité voulez vous que "+ nom +" fasse \n Manger ? \n Dormir ? \n sport ? \n laver ? \n Jouer ?");
+		 user = scan.nextLine().toLowerCase().charAt(0);
+		 switch(user) {
+		 case 'm':activity = this.manger();
+		 break;
+		 case'd':activity =this.dormir();
+		 break;
+		 case 's': case 'a':activity = this.activiteSportive();
+		 break;
+		 case 'l':activity = this.douche();
+		 break;
+		 case 'j':activity = this.jeux();
+		 break;
+		 default: activity = error();
+		 break;
+			 
+		 }return activity;
+	}
+ public String error() {
+	 status ="error";
+			 return status;
+ }
 
 	//ECLOSION//
 	public String eclosion() {
