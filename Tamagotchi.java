@@ -45,7 +45,7 @@ public class Tamagotchi {
 			 
 		 }return activity;
 	}
- public String error() {
+	public String error() {
 	 status ="error";
 			 return status;
  }
@@ -108,7 +108,7 @@ public class Tamagotchi {
 	///LES ACTIVITE///
 	public String manger() {
 		status = "Hmmm votre tamagotchi a bien manger";
-		faim ++;
+		faim ++ ;
 		bonheur ++;
 		propre --;
 		poid ++;
