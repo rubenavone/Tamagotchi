@@ -125,7 +125,7 @@ public class Tamagotchi {
 		faim --;
 		poid ++;
 		propre ++;
-
+		fatigue = 0;
 		return status;
 	}
 	public String activiteSportive() {
@@ -134,6 +134,7 @@ public class Tamagotchi {
 		propre --;
 		poid --;
 		faim --;
+		muscle++;
 		return status;
 	}
 	public String douche() {
@@ -145,8 +146,8 @@ public class Tamagotchi {
 	}
 	public String jeux() {
 		status = "Super votre tamagochi s'amuse comme un petit fou";
-		bonheur += 2;
-		fatigue -= 2;
+		bonheur ++;
+		fatigue --;
 		propre --;
 		faim ++;
 		return status;
@@ -161,16 +162,11 @@ public class Tamagotchi {
 			status = nom + " Votre tamagotchi est mort";
 			setVie(false);
 			break;
-		case -3: case -4: 
+			case -4: 
 			status = nom + " Votre tamagotchi agonise";
 			break;
-		case 0: case 1: 
-			status = nom + " Votre Tamagotchi est rassasié !";
-			break;
-		case 2: case 3:
-			status = nom + " Votre tamagotchi a un gros bide il est plein !!!";
-			break;
-		case 4:
+		
+			case 4:
 			status = nom + " Attention votre tamagotchi risque de vomir si vous le nourissez trop";
 			break;
 		case 5: 
@@ -190,18 +186,14 @@ public class Tamagotchi {
 		case -3: case -4:  
 			status = nom + " Votre tamagotchi est trop maigre et risque de mourir";
 			break;
-		case 0: case 1: 
-			status = nom + "Votre Tamagotchi se sent bien sur la balance";
-			break;
-		case 2: case 3:
-			status = nom + " Votre tamagotchi à grossi !!!";
-			break;
+	
 		case 4:
 			status = nom + " Attention votre tamagotchi risque de mourir d'obésité ";
 			break;
 		case 5: 
 			status = nom + " Voila il est mort en roulant jusqu'à la mer et a coulé à cause de son poids";
 			poid = 5;
+			setVie(false);
 			break;
 		}
 		return status;
@@ -214,13 +206,7 @@ public class Tamagotchi {
 			setVie(false);
 			break;
 		case -3: case -4: 
-			status = nom + " Votre tamagotchi commence à faire caca autour de lui";
-			break;
-		case 0: case 1: 
-			status = nom + " Votre Tamagotchi à envie d'aller à la douche car il pue !";
-			break;
-		case 2: case 3:
-			status = nom + " Votre tamagotchi hésite entre une douche ou un bain !!!";
+			status = nom + " Votre tamagotchi Sent fort";
 			break;
 		case 4:
 			status = nom + " est propre";
@@ -239,19 +225,13 @@ public class Tamagotchi {
 			status = nom + " Votre tamagotchi est mort d'ennuie sous une musique de Nirvana";
 			setVie(false);
 			break;
-		case -3: case -4: 
+		case -4: 
 			status = nom + " Votre tamagotchi commence à déprimer, il a acheté une boite de lexomil";
-			break;
-		case 0: case 1: 
-			status = nom + "Votre Tamagotchi va bien!";
-			break;
-		case 2: case 3:
-			status = nom + "Votre tamagotchi s'enjaille sur World of Warcraft !!!";
 			break;
 		case 4:
 			status = nom + " Votre tamagotchi s'enjaille une série";
 			break;
-		case 5: 
+		case 5: case 6: case 7: 
 			status = nom + " fap fap fap";
 			bonheur = 5;
 			break;
@@ -267,12 +247,7 @@ public class Tamagotchi {
 		case -3: case -4: 
 			status = nom + " Votre tamagotchi est faiblard";
 			break;
-		case 0: case 1: 
-			status = nom + " Votre Tamagotchi est pas très musclé !";
-			break;
-		case 2: case 3:
-			status = nom + " Votre tamagotchi commencer a etre tailler en V";
-			break;
+
 		case 4:
 			status = nom + " Attention votre tamagotchi risque de ne plus passer les porte";
 			break;
@@ -293,12 +268,6 @@ public class Tamagotchi {
 			break;
 		case -3: case -4: 
 			status = nom + " Votre tamagotchi meurt de fatigue il somnole";
-			break;
-		case 0: case 1: 
-			status = nom + " Votre Tamagotchi est eveiller";
-			break;
-		case 2: case 3:
-			status = nom + " Votre tamagotchi est bien reveiller";
 			break;
 		case 4:
 			status = nom + " Votre tamagotchi a bus trop de redbull";
@@ -349,7 +318,7 @@ public class Tamagotchi {
 	@Override
 	public String toString() {
 		return "Tamagotchi [faim=" + faim + ", poid=" + poid + ", propre=" + propre + ", bonheur=" + bonheur
-				+ ", muscle=" + muscle + ", fatigue=" + fatigue + ", sex=" + sex + ", nom=" + nom + "]";
+				+ ", muscle=" + muscle + ", fatigue=" + fatigue + "]";
 	}
 	///END///
 	

@@ -22,17 +22,20 @@ public class MainTamagotchi {
 		System.out.println("Merci de choisir le nom de votre tamagotchi !");
 		
 		System.out.println(tama.eclosion());
-		System.out.println(tama.isVie());
+		
 		//Tant que tamagotchi est en vie//
 		while (tama.isVie() != false) {
 			System.out.println(tama.checkStatus());
-			tama.choix();
+			System.out.println(tama.toString());
+			
+			System.out.println(tama.choix());
 			essai ++;
 			tama.setAge(essai);
-			
+			 System.out.println("votre "+ tama.getNom() +" a maintenant "+ tama.getAge() +" ans");
 		}
 		
 		System.out.println("La partie est terminer !");
+		
 		
 		//choix de l'activité//
 		
